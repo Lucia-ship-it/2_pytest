@@ -1,0 +1,1 @@
+ked testujeme, musim eredpokladat, ze je to spatne. preto by sme nemali verit, ze connection je dobre napisane v hlavnom skripte. preto si ju napiseme sami.
