@@ -1,25 +1,27 @@
 import pymysql
 from pymysql.err import MySQLError
 
-def connect_to_db(host, user, password, database):
+def connect_to_db(host, user, password, database, port):
     try:
         return pymysql.connect(
             host=host,
             user=user,
             password=password,
             database=database,
+            port=port,
             cursorclass=pymysql.cursors.Cursor,
             autocommit=False
         )
     except MySQLError as e:
         raise ConnectionError(f"Database connection failed: {e}")
 
-def initialize_database(host, user, password, db_name):
+def initialize_database(host, user, password, db_name, port):
     try:
         connection = pymysql.connect(
             host=host,
             user=user,
             password=password,
+            port=port,
             cursorclass=pymysql.cursors.Cursor,
             autocommit=True
         )
